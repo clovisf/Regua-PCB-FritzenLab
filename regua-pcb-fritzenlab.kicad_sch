@@ -3402,6 +3402,80 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_Push_Dual")
+		(at 83.82 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c97ce7b3-9bb3-4943-8f30-fbda08ca739b")
+		(property "Reference" "SW1"
+			(at 83.82 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push_Dual"
+			(at 83.82 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_B3S-1000"
+			(at 83.82 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 83.82 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, symbol, four pins"
+			(at 83.82 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c6337386-ea11-4cc3-bafc-76296f2a3f90")
+		)
+		(pin "4"
+			(uuid "23777451-d299-41ff-8618-98d341393555")
+		)
+		(pin "3"
+			(uuid "27e7ceaa-b999-44d1-877e-0a39c121c166")
+		)
+		(pin "2"
+			(uuid "b9744eaa-3f63-4f48-9d96-20d7f62cbb0f")
+		)
+		(instances
+			(project ""
+				(path "/3205cd5b-1b26-4b0a-b49b-cd66d8660b15"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 137.16 116.84 0)
 		(unit 1)
@@ -3462,80 +3536,6 @@
 			(project "regua-pcb-fritzenlab"
 				(path "/3205cd5b-1b26-4b0a-b49b-cd66d8660b15"
 					(reference "#PWR07")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push_Dual")
-		(at 83.82 48.26 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e887e660-b0e6-4f6a-ab63-b11f89510ee1")
-		(property "Reference" "SW1"
-			(at 83.82 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push_Dual"
-			(at 83.82 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_PTS810"
-			(at 83.82 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 83.82 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, symbol, four pins"
-			(at 83.82 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "25401fee-f319-42cc-9e06-c43481594246")
-		)
-		(pin "3"
-			(uuid "f0289f4a-dab0-4037-802b-7b0fa1965f4b")
-		)
-		(pin "4"
-			(uuid "de713700-d2d0-418b-9c63-75ed86de98f7")
-		)
-		(pin "1"
-			(uuid "be1d2909-1bad-4e6e-a51e-45884891480d")
-		)
-		(instances
-			(project ""
-				(path "/3205cd5b-1b26-4b0a-b49b-cd66d8660b15"
-					(reference "SW1")
 					(unit 1)
 				)
 			)
