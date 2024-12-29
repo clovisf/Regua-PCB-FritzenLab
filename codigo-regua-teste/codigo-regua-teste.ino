@@ -91,6 +91,8 @@ void loop() {
 
     }else if(waittime == true){
       if(startedwait == true){
+        digitalWrite(1, LOW);
+        digitalWrite(0, LOW);
         startedwait = false;
         elapsedtime = millis();
       }
