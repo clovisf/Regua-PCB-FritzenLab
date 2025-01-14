@@ -1,4 +1,3 @@
-
 // Conexão do termistor
 const int pinTermistor = A1;
 const int referencia = A2;
@@ -34,12 +33,12 @@ int doubletens= 0;
 bool blinkingunits = false;
 bool enteredunit = false;
 int doubleunit = 0;
-int unidade = 0;
-int dezena = 0;
+int unit = 0;
+int tens = 0;
 bool waittime = true;
 bool startedwait = false;
 long elapsedtime;
-int temperatura;
+int temperature;
 
 int digitoaentrar = 1;
 
@@ -61,11 +60,14 @@ void loop() {
     // Start your code below
     //-----------------------
 
-    if(blinkingtens == true && dezena != 0 && blinkingunits == false){
+    if(blinkingtens == true && blinkingunits == false){
       if(enteredtens == false){
         enteredtens = true;
-        doubletens = 2 * dezena;
-      }
+        doubletens = 2 * tens;
+        if(doubletens == 0){
+          doubletens= 1;
+        }
+      } 
       doubletens --;
       if(doubletens != 0){
         digitalWrite(0, !digitalRead(0));
@@ -74,11 +76,14 @@ void loop() {
         blinkingtens = false;
       }
 
-    }else if(blinkingunits == true && unidade != 0 && blinkingtens == false){
+    }else if(blinkingunits == true && blinkingtens == false){
       blinkingtens= false;
       if(enteredunit == false){
         enteredunit = true;
-        doubleunit = 2 * unidade;
+        doubleunit = 2 * unit;
+        if(doubleunit == 0){
+          doubleunit= 1;
+        }
       }
       doubleunit --;
       if(doubleunit != 0){
@@ -130,30 +135,30 @@ void loop() {
     double v = (vcc*soma)/(nAmostras*1024.0);
     double rt = (vcc*R)/v - R;
  
-    // Calcula a temperatura
+    // Calcula a temperature
     double t = beta / log(rt/rx);
     t= t - 273;
-    temperatura = int(t);
+    temperature = int(t);
     //Serial.println (t-273.0);
 
-    if(temperatura < 10){
-      dezena= 0;
-      unidade= temperatura;
-    }else if(temperatura >= 10 && temperatura < 20){
-       dezena= 1;
-       unidade= temperatura - 10;
-    }else if(temperatura >= 20 && temperatura < 30){
-      dezena= 2;
-      unidade= temperatura - 20;
-    }else if(temperatura >= 30 && temperatura < 40){
-      dezena= 3;
-      unidade= temperatura - 30;
-    }else if(temperatura >= 40 && temperatura < 50){
-      dezena= 4;
-      unidade= temperatura - 40;
+    if(temperature < 10){
+      tens= 0;
+      unit= temperature;
+    }else if(temperature >= 10 && temperature < 20){
+       tens= 1;
+       unit= temperature - 10;
+    }else if(temperature >= 20 && temperature < 30){
+      tens= 2;
+      unit= temperature - 20;
+    }else if(temperature >= 30 && temperature < 40){
+      tens= 3;
+      unit= temperature - 30;
+    }else if(temperature >= 40 && temperature < 50){
+      tens= 4;
+      unit= temperature - 40;
     }else{
-      dezena= 0;
-      unidade= 0;
+      tens= 0;
+      unit= 0;
     }
   }
 
